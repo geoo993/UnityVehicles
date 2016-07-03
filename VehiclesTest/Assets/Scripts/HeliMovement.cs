@@ -46,7 +46,7 @@ public class HeliMovement : MonoBehaviour {
 	void FixedUpdate () {
 
 		// right analog(rotate left and right)   //horizontal2(tilt left and tilt right)
-		Vector3 controlTorque = new Vector3(Input.GetAxis("PS4_RightAnalogVertical") * forwardRotorTorqueMultiplier,1.0f,-Input.GetAxis( "Horizontal2" ) * sidewaysRotorTorqueMultiplier);
+		Vector3 controlTorque = new Vector3(Input.GetAxis("PS4_RightAnalogVertical") * forwardRotorTorqueMultiplier, 1.0f,-Input.GetAxis( "Horizontal2" ) * sidewaysRotorTorqueMultiplier);
 
 		if (mainRotorActive == true) {
 			torqueValue = (controlTorque * maxRotorForce * rotorVelocity);////////////////

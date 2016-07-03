@@ -34,8 +34,8 @@ public class JetMovement : MonoBehaviour {
 
 		//OnGUI ();
 
-		//moveForward = new Vector3 (0, 0, Input.GetAxis ("Vertical")).normalized;
-		moveForward = new Vector3 (0, 0, Input.GetAxis("Vertical2")).normalized;
+		moveForward = new Vector3 (0, 0, Input.GetAxis ("Vertical")).normalized;
+		//moveForward = new Vector3 (0, 0, Input.GetAxis("Vertical2")).normalized;
 
 		if (playerFlying) {
 			GetComponent<Rigidbody> ().useGravity = true;
@@ -45,38 +45,37 @@ public class JetMovement : MonoBehaviour {
 			GetComponent<Rigidbody> ().useGravity = false;
 		}
 
-//		if (Input.GetKey (KeyCode.UpArrow)) {
-//			transform.eulerAngles = new Vector3(Mathf.LerpAngle(0, 10f, Time.time * 1f), transform.eulerAngles.y, transform.eulerAngles.z);
-//
-//		}
-//		if (Input.GetKeyUp (KeyCode.UpArrow)) {
-//		
-//			transform.eulerAngles = new Vector3(Mathf.LerpAngle(0, 0f, Time.time * 1f), transform.eulerAngles.y, transform.eulerAngles.z);
-//		}
-//
-//
-//		if (Input.GetKey (KeyCode.DownArrow)) {
-//
-//			transform.eulerAngles = new Vector3(Mathf.LerpAngle(0, -10f, Time.time * 1f), transform.eulerAngles.y, transform.eulerAngles.z);
-//		}
-//		if (Input.GetKeyUp (KeyCode.DownArrow)) {
-//			transform.eulerAngles = new Vector3(Mathf.LerpAngle(0, 0f, Time.time * 1f), transform.eulerAngles.y, transform.eulerAngles.z);
-//
-//		}
+		if (Input.GetKey (KeyCode.UpArrow)) {
+			transform.eulerAngles = new Vector3(Mathf.LerpAngle(0, 10f, Time.time * 1f), transform.eulerAngles.y, transform.eulerAngles.z);
+
+		}
+		if (Input.GetKeyUp (KeyCode.UpArrow)) {
+		
+			transform.eulerAngles = new Vector3(Mathf.LerpAngle(0, 0f, Time.time * 1f), transform.eulerAngles.y, transform.eulerAngles.z);
+		}
 
 
-		this.transform.Rotate (0.0f, (rotateSpeed) * (Input.GetAxis ("PS4_RightAnalogHorizontal")), 0.0f);
+		if (Input.GetKey (KeyCode.DownArrow)) {
 
-//		if (Input.GetKey (KeyCode.RightArrow)||Input.GetKey (KeyCode.Joystick1Button5)) {
-//
-//			this.transform.Rotate ( new Vector3( 0, rotateSpeed * Time.deltaTime, 0));
-//
-//		}
-//		else if (Input.GetKey (KeyCode.LeftArrow)|| Input.GetKey (KeyCode.Joystick1Button4)) {
-//		
-//			this.transform.Rotate (new Vector3 (0, -rotateSpeed * Time.deltaTime, 0));
-//
-//		}
+			transform.eulerAngles = new Vector3(Mathf.LerpAngle(0, -10f, Time.time * 1f), transform.eulerAngles.y, transform.eulerAngles.z);
+		}
+		if (Input.GetKeyUp (KeyCode.DownArrow)) {
+			transform.eulerAngles = new Vector3(Mathf.LerpAngle(0, 0f, Time.time * 1f), transform.eulerAngles.y, transform.eulerAngles.z);
+		}
+
+
+		//this.transform.Rotate (0.0f, (rotateSpeed) * (Input.GetAxis ("PS4_RightAnalogHorizontal")), 0.0f);
+
+		if (Input.GetKey (KeyCode.RightArrow)||Input.GetKey (KeyCode.Joystick1Button5)) {
+
+			this.transform.Rotate ( new Vector3( 0, rotateSpeed * Time.deltaTime, 0));
+
+		}
+		else if (Input.GetKey (KeyCode.LeftArrow)|| Input.GetKey (KeyCode.Joystick1Button4)) {
+		
+			this.transform.Rotate (new Vector3 (0, -rotateSpeed * Time.deltaTime, 0));
+
+		}
 
 		if (Input.GetKey (KeyCode.W)|| Input.GetKey (KeyCode.Joystick1Button1)) {
 

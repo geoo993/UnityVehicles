@@ -38,7 +38,7 @@ public class Camera : MonoBehaviour {
 	void Update ()
 	{
 			
-		player.GetComponent<AirplaneMovement> ().PlaneMove ();
+		player.GetComponent<Airplane> ().PlaneMove ();
 			
 	}
 	void LateUpdate () {
